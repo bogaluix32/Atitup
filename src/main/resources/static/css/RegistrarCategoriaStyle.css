@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: rgba(47, 180, 255, 0.18);
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    padding: 0 24px;
+    background:  #323741;
+}
+.navbar-background {
+    color: blue;
+    backdrop-filter: blur(75px);
+}
+
+select {
+    appearance: none;
+    -webkit-appearance: none; /* para navegadores Webkit, como Safari y Chrome */
+    padding: 5px;
+    border: 1px solid #ccc;
+    width: 200px;
+    height: 30px;
+    background-color: white;
+}
+
+
+.btn-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-right:100px;
+}
+
+.btn-exit {
+    margin-left: auto;
+}
+.btn-registerCategory{
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-bottom: 3px solid white ;
+}
+.btn-registerItem{
+    margin:20px;
+    justify-content: center;
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+
+}
+.btn-exit{
+    background-color: white;
+    color:black;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+}
+.btn-registerCategory:hover{
+    color:grey;
+}
+.btn-registerItem:hover{
+    color:grey;
+    border-bottom: 3px solid white;
+    background-color: transparent;
+}
+.btn-exit:hover,
+.btn-exit:active{
+    color:white;
+    background-color: #434851a9;
+    transition: all 1s ease;
+}
+
+.RegisterContent >*{
+    font-family: 'Actor', sans-serif;
+    margin-bottom: 1%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    margin-left: 30%;
+    margin-top: 50px;
+}
+.RegisterContent {
+    margin-top: 0px;
+}
+
+.contentAdmin h1{
+    font-family: 'Actor', sans-serif;
+    text-align: center;
+    margin-bottom: 70px;
+    margin-left: 48%;
+}
+
+.contentAdmin {
+    margin-top: 70px;
+}
+.square {
+    position: absolute;
+    width: 650px;
+    height: 600px;
+    background: rgba(0, 159, 249, 0.94);
+    z-index: -1;
+}
+.square2 {
+    float: left;
+    position: absolute;
+    width: 550px;
+    height: 470px;
+    background:  rgba(132, 199, 237, 0.369);
+    z-index: -1;
+    margin-left: 810px;
+    margin-top: 150px;
+    border-radius: 20px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.image1{
+    padding: 5px;
+    float: left;
+    width: 670px;
+    height: 670px;
+    z-index: 1;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.Name input {
+    margin-right: 20px;
+    width: 50%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    word-wrap: break-word;
+
+}
+.name{
+    margin:10px;
+}
+
+.Description input {
+    /* display: inline-block; */
+    width: 50%;
+    height: 80px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 10px;
+    margin-right: 50px;
+    text-align: center;
+    word-wrap: break-word;
+
+}
+.Description {
+    margin-right: 0px;
+}
+.col1 select {
+    /* margin-right: 50px; */
+    width: 35%;
+    height: 100px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 5%;
+    text-align: center;
+
+}
+.col1 {
+
+    margin-bottom: 10px; /* Agrega un espacio entre los botones */
+}
+
+
+
+.btn-registed{
+    background-color: #323741;
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: all 1s ease;
+    padding: 8px 12px;
+    margin-bottom: 10px;
+
+}
+.btn-registed:hover{
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Category Register</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Actor&family=Jura:wght@400;500&display=swap');
+  </style>
+    <link rel="stylesheet" href="/css/RegistrarCategoriaStyle.css">
+    <script src="/scripts/RegistrarCategoria.js"></script>
+</head>
+<body>
+<main class="adminWindow">
+
+  <div class="navbar">
+    <div calss="navbar-background"> </div>
+    <div class="btn-navbar">
+        <a th:href="@{/index/RegistrarCategoria}" class="btn-registerCategory">Registrar Categoria</a>
+      <a th:href="@{/index/RegistrarItem}" class="btn-registerItem">Registrar Item</a>
+      <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
+    </div>
+
+  </div>
+  <div class="contentAdmin">
+    <h1>Registre una Categoría </h1>
+
+    <form class="RegisterContent" method="post"
+          th:action="@{/index/GuardarRegistroCategoria}"
+          th:object="${categoria}">
+
+        <div class="id" >
+          <input type="hidden" name="idCategoria" th:field="*{idCategoria}"/>
+        </div>
+
+        <div class="Name" >
+          <label for="NombreCategoria">Nombre:</label>
+          <input type="text" id="NombreCategoria" name="NombreCategoria" placeholder="Nombre de categoria" th:field="*{nombreCategoria}"/>
+        </div>
+
+        <div class="Description" >
+          <label for="DescripcionCategoria">Descripción:</label>
+          <input type="text" id="DescripcionCategoria" name="DescripcionCategoria" placeholder="Descripción de la categoría" th:field="*{descripcionCategoria}"/>
+        </div>
+
+        <div class="col1">
+          <label id="lblCurso" class="form-labelCol1">Curso:</label>
+          <select id="cboCodigoCurso" name="cboCodigoCurso" class="form-selectCategory" multiple>
+            <option value="0">Seleccione una opción</option>
+          </select>
+        </div>
+        <div class="btn-registerCategory2">
+          <input class="btn-registed" type="submit" value="Guardar">
+        </div>
+    </form>
+  </div>
+</main>
+</body>
+</html>
+<script>
+    a = 0;
+
+    var CodigoCursos = [
+        { id: 1, name: "CI0200 - EXAMEN DIAGNÓSTICO" },
+        { id: 2, name: "CI0202 - INGLÉS BÁSICO" },
+        { id: 3, name: "MA0101 - MATEMÁTICA GENERAL" },
+        { id: 4, name: "CI1106 - COMUNICACIÓN ESCRITA" },
+        { id: 5, name: "MA1403 - MATEMÁTICA DISCRETA" },
+        { id: 6, name: "SE1100 - ACTIVIDAD CULTURAL I" },
+        { id: 7, name: "TI1102 - INFORMACIÓN CONTABLE" },
+        { id: 8, name: "TI1103 - MODELOS ORGANIZACIONALES Y GESTIÓN DE TI" },
+        { id: 9, name: "TI1400 - INTRODUCCIÓN A LA PROGRAMACIÓN" },
+        { id: 10, name: "TI1401 - TALLER DE PROGRAMACIÓN" },
+        { id: 11, name: "CI1107 - COMUNICACIÓN ORAL" },
+        { id: 12, name: "FH1000 - CENTROS DE FORMACIÓN HUMANÍSTICA" },
+        { id: 13, name: "MA1102 - CÁLCULO DIFERENCIAL E INTEGRAL" },
+        { id: 14, name: "SE1200 - ACTIVIDAD DEPORTIVA I" },
+        { id: 15, name: "TI1201 - COMPORTAMIENTO ORGANIZACIONAL Y TALENTO HUMANO" },
+        { id: 16, name: "TI2402 - ALGORITMOS Y ESTRUCTURAS DE DATOS" },
+        { id: 17, name: "TI2404 - ORGANIZACIÓN Y ARQUITECTURA DE COMPUTADORAS" },
+        { id: 18, name: "TI4500 - INGENIERÍA DE REQUERIMIENTOS" },
+        { id: 19, name: "CI3400 - INGLÉS 1 (ATI)" },
+        { id: 20, name: "MA1103 - CÁLCULO Y ALGEBRA LINEAL" },
+        { id: 21, name: "SE1400 - ACTIVIDAD CULTURAL-DEPORTIVA" },
+        { id: 22, name: "TI2800 - ADMINISTRACIÓN DE PROYECTOS I" },
+        { id: 23, name: "TI3103 - COSTOS EN AMBIENTES INFORMÁTICOS" },
+        { id: 24, name: "TI3600 - BASES DE DATOS" },
+        { id: 25, name: "TI4200 - ECONOMÍA" },
+        { id: 26, name: "CI4401 - INGLÉS II (ATI)" },
+        { id: 27, name: "MA2404 - PROBABILIDADES" },
+        { id: 28, name: "TI2201 - PROGRAMACIÓN ORIENTADA A OBJETOS" },
+        { id: 29, name: "TI3801 - ADMINISTRACIÓN DE PROYECTOS II" },
+        { id: 30, name: "TI4101 - PLANIFICACIÓN Y PRESUPUESTO" },
+        { id: 31, name: "TI4601 - BASES DE DATOS AVANZADOS" },
+        { id: 32, name: "CS3404 - SEMINARIO DE ÉTICA PARA LA INGENIERÍA" },
+        { id: 33, name: "MA3405 - ESTADÍSTICA" },
+        { id: 34, name: "TI3500 - MERCADEO EN LA ERA DIGITAL" },
+        { id: 35, name: "TI3501 - FUNDAMENTOS DE SISTEMAS OPERATIVOS" },
+        { id: 36, name: "TI5100 - GESTIÓN Y TOMA DE DECISIONES FINANCIERAS" },
+        { id: 37, name: "TI5501 - DISEÑO DE SOFTWARE" },
+        { id: 38, name: "CS2304 - DERECHO LABORAL" },
+        { id: 39, name: "TI3601 - MODELO DE TOMA DE DECISIONES" },
+        { id: 40, name: "TI3602 - PRODUCCIÓN, LOGÍSTICA Y CALIDAD" },
+        { id: 41, name: "TI3603 - CALIDAD EN SISTEMAS DE INFORMACIÓN" },
+        { id: 42, name: "TI3604 - FUNDAMENTOS DE REDES" },
+        { id: 43, name: "TI6900 - INTELIGENCIA DE NEGOCIOS" },
+        { id: 44, name: "TI9003 - COMPUTACIÓN Y SOCIEDAD" },
+        { id: 45, name: "CS3405 - DERECHO INFORMÁTICO Y MERCANTIL" },
+        { id: 46, name: "TI4701 - SEGURIDAD EN SISTEMAS DE INFORMACIÓN" },
+        { id: 47, name: "TI5000 - ELECTIVA 1" },
+        { id: 48, name: "TI7503 - ARQUITECTURA DE APLICACIONES" },
+        { id: 49, name: "TI7901 - NEGOCIOS ELECTRÓNICOS" },
+        { id: 50, name: "TI8109 - FORMULACIÓN Y EVALUACIÓN DE PROYECTOS DE TI" },
+        { id: 51, name: "TI6000 - ELECTIVA 2" },
+        { id: 52, name: "TI8902 - ADQUISICIÓN DE TI" },
+        { id: 53, name: "TI8904 - ADMINISTRACIÓN DE PROCESOS DE NEGOCIOS" },
+        { id: 54, name: "TI8905 - ADMINISTRACIÓN DE SERVICIOS DE TECNOLOGÍAS DE INFORMACIÓN I" },
+        { id: 55, name: "TI9805 - AUDITORÍA DE TI" },
+        { id: 56, name: "TI9905 - SISTEMAS DE INFORMACIÓN EMPRESARIAL" },
+        { id: 57, name: "TI5901 - ESPÍRITU EMPRENDEDOR Y CREACIÓN DE EMPRESAS" },
+        { id: 58, name: "TI5902 - ANALÍTICA EMPRESARIAL" },
+        { id: 59, name: "TI5903 - PLANIFICACIÓN ESTRATÉGICA DE TECNOLOGÍA DE INFORMACIÓN" },
+        { id: 60, name: "TI5904 - INVESTIGACIÓN EN SISTEMAS DE INFORMACIÓN" },
+        { id: 61, name: "TI5905 - FUNDAMENTOS DE ARQUITECTURA EMPRESARIAL" },
+        { id: 62, name: "TI9004 - ADMINISTRACIÓN DE SERVICIOS DE TECNOLOGÍAS DE INFORMACIÓN II" }]
+
+    var codigoCursosSelect = document.getElementById('cboCodigoCurso');
+
+    CodigoCursos.forEach(function (curso) {
+        let opcion = document.createElement('option')
+        opcion.value = curso.id
+        opcion.text = curso.name
+        codigoCursosSelect.add(opcion)
+    })
+</script>

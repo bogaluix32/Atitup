@@ -1,0 +1,314 @@
+body {
+    /* Width:1280px;
+    Height:500px;
+    Top:-496px;
+    Left:-1850px; */
+    margin: 0;
+    padding: 0;
+    background: rgba(47, 180, 255, 0.18);
+}
+
+.navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    background-color: #323741;
+    padding: 0 24px;
+    /* background: #1A9FFF;
+    filter: blur(75px); */
+    /* background: linear-gradient(190deg, #FFFFFF 32.81%, #157FE9 100%); */
+
+}
+.btn-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-right:100px;
+}
+
+.btn-exit {
+    margin-left: auto;
+}
+.btn-registerCategory{
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+
+}
+.btn-registerItem{
+    margin:20px;
+    justify-content: center;
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-bottom: 3px solid white ;
+}
+.btn-exit{
+    background-color: white;
+    color:black;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.btn-registerItem:hover{
+    color:grey;
+}
+.btn-registerCategory:hover{
+    color:grey;
+    border-bottom: 3px solid white;
+    background-color: transparent;
+}
+.btn-exit:hover,
+.btn-exit:active{
+    color:white;
+    background-color: #434851a9;
+    transition: all 1s ease;
+
+}
+
+.RegisterContentItem >*{
+    font-family: 'Actor', sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    text-align: center;
+    margin-left: 10px;
+    margin-top: 40px;
+}
+
+/* .RegisterContent {
+ margin-top: 0px;
+} */
+
+.btn-registerCategory2{
+    justify-content: center;
+}
+
+.contentAdminItem h1{
+    font-family: 'Actor', sans-serif;
+    text-align: center;
+    margin-bottom: 20px;
+    margin-left: 48%;
+    margin-top: 3%;
+}
+
+.contentAdminItem {
+    margin-top: 1%;
+}
+.square {
+    position: absolute;
+    width: 650px;
+    height: 600px;
+    background: rgba(0, 159, 249, 0.94);
+    z-index: -1;
+}
+
+.square2 {
+    float: left;
+    position: absolute;
+    width: 600px;
+    height: 550px;
+    background:  rgba(132, 199, 237, 0.369);
+    z-index: -1;
+    margin-left: 780px;
+    margin-top: 1%;
+    border-radius: 20px;
+    overflow-y: scroll;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+
+}
+.image1{
+    padding: 5px;
+    float: left;
+    width: 670px;
+    height: 670px;
+    z-index: 1;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: none;
+
+}
+
+.Pregunta input {
+    display: inline-block;
+    width: 70%;
+    height: 90px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-right: 10px;
+    margin-left: 10px;
+    text-align: center;;
+}
+
+.Respuesta input {
+    display: inline-block;
+    width: 70%;
+    height: 90px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.Ejemplo input {
+    display: inline-block;
+    width: 70%;
+    height: 90px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 10px;
+    text-align: center;
+    word-wrap: break-word;
+}
+
+.col1Item select {
+    width: 40%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 2%;
+}
+
+.col1Item {
+    margin-right: 150px;
+    margin-bottom: 10px; /* Agrega un espacio entre los botones */
+}
+
+.col2Item select {
+    width: 40%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 2%;
+}
+.col2Item {
+    /* margin-right: 150px; */
+    margin-bottom: 10px; /* Agrega un espacio entre los botones */
+}
+.col3Item select {
+    width: 40%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 2%;
+}
+
+.btn-registerItem2{
+    background-color: #323741;
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: all 1s ease;
+    padding: 8px 12px;
+    margin-top: 2%;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+
+
+}
+
+.btn-registerItem2:hover{
+    background-color: white;
+    color: black;
+}
+
+.btn-ChatGPT {
+    background-color:  #323741c1;
+    color:white;
+    font-size: 11px;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+
+}
+
+.btn-ChatGPT:hover,
+.btn-ChatGPT:active{
+    color:white;
+    background-color: #32374158 ;
+    transition: all 1s ease;
+}
+
+.btn-ejemplo {
+    background-color: #323741c1 ;
+    color:white;
+    font-size: 11px;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 12px;
+    margin-right: 10px;
+    margin-left: 10px;
+    margin-top: 30px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.btn-ejemplo:hover,
+.btn-ejemplo:active{
+    color:white;
+    background-color: #32374158;
+    transition: all 1s ease;
+}

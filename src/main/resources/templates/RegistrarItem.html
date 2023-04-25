@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Item Register </title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Actor&family=Jura:wght@400;500&display=swap');
+    </style>
+    <link rel="stylesheet" href="/css/RegistrarItemStyle.css">
+    <script src="/scripts/RegistrarItem.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+
+<main class="adminWindowItem">
+    <div class="navbar">
+        <div calss="navbar-backgroundItem"> </div>
+        <div class="btn-navbar">
+            <a th:href="@{/index/RegistrarCategoria}" class="btn-registerCategory">Registrar Categoria</a>
+            <a th:href="@{/index/RegistrarItem}" class="btn-registerItem">Registrar Item</a>
+            <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
+        </div>
+    </div>
+
+    <div class="square"></div>
+    <div class="containerImg">
+        <img src="https://images.pexels.com/photos/8572602/pexels-photo-8572602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagen1" class="image1">
+    </div>
+    <div class="contentAdminItem">
+        <h1>Registre una Item</h1>
+
+        <div class="square2">
+            <form id="myForm" class="RegisterContentItem" method="post"
+                  th:action="@{/index/GuardarRegistroItem}"
+                  th:object="${item}">
+
+                <div class="col1Item">
+                    <label id="lblCategoriaItem" for="cboCategoryItem" class="form-labelCol1Item">Categoría a la que pertenece el ítem</label>
+                    <select id="cboCategoryItem" class="form-selectCategoryItem" th:field="*{idCategoria}">
+                        <option value="0">Seleccione una opción</option>
+                        <th:block th:each="categoria : ${categorias}">
+                            <option th:value="${categoria.idCategoria}" th:text="${categoria.nombreCategoria}"></option>
+                        </th:block>
+                    </select>
+                </div>
+
+                <div class="Pregunta" >
+                    <label>Pregunta:</label>
+                    <input id="idPregunta" name="pregunta" placeholder="Ingrese la pregunta" th:field="*{pregunta}">
+                </div>
+
+                <div class="Respuesta" >
+                    <label>Respuesta:</label>
+                    <input type="text" id="idRespuesta" name="respuesta" value="" th:field="*{respuesta}">
+                    <div class="btn-RespuestaChatGPT">
+                        <!--<button class="btn-ChatGPT" type="button" onclick="">Preguntar a ChatGPT</button>-->
+                    </div>
+                </div>
+
+                <div class="Ejemplo" >
+                    <label>Ejemplo:</label>
+                    <input type="text" id="idEjemplo" name="ejemplo" value="" th:field="*{ejemplo}">
+                    <div class="btn-EjemploChatGPT">
+                        <!--<button class="btn-ejemplo" >Ejemplo de ChatGPT</button>-->
+                    </div>
+                </div>
+
+                <div class="col2Item">
+                    <label id="lblFuenteRespuesta" for="cboFuenteRespuesta" class="form-labelCol2FuenteRespuesta">Fuente de la Respuesta</label>
+                    <select id="cboFuenteRespuesta" class="form-selectFuenteRespuesta"th:field="*{fuenteRespuesta}">
+                        <option value="0">Seleccione una opción</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="ChatGPT">Chat-GPT</option>
+                    </select>
+                </div>
+
+                <div class="col3Item">
+                    <label id="lblFuenteEjemplo" for="cboFuenteEjemplo" class="form-labelCol2FuenteEjemplo">Fuente del ejemplo</label>
+                    <select id="cboFuenteEjemplo" class="form-selectFuenteEjemplo" th:field="*{fuenteEjemplo}">
+                        <option value="0">Seleccione una opción</option>
+                        <option value="Administrador">Administrador</option>
+                        <option value="ChatGPT">Chat-GPT</option>
+                    </select>
+                </div>
+
+                <div class="btn-registerIte2">
+                    <input class="btn-registerItem2" type="submit" value="Guardar" onclick="if(validarSeleccion()) if(validarPregunta()) if(validarSeleccionRespuesta())if(validarSeleccionEjemplo());"/>
+                </div>
+            </form>
+        </div>
+    </div>
+</main>
+</html>
+
+<script>
+    /*
+    $('#myForm').on('submit', function(event) {
+        event.preventDefault(); // evita que el formulario se envíe automáticamente
+
+        var formData = $(this).serialize(); // serializa los datos del formulario
+
+        $.post('/index/GuardarRegistroItem', formData, function(data) {
+            // actualiza el input correspondiente con la respuesta recibida
+            if (data.respuestaChatGPT) {
+                $('#respuesta').val(data.respuestaChatGPT);
+            }
+            if (data.ejemploChatGPT) {
+                $('#ejemplo').val(data.ejemploChatGPT);
+            }
+        });
+    });*/
+
+</script>
