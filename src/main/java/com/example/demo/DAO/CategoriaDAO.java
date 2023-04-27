@@ -16,7 +16,7 @@ public class CategoriaDAO {
 
     @Transactional(readOnly = true)
     public List<Categoria> listarCategoria() {
-        String sql = "SELECT idCategoria, nombreCategoria, codigoCategoria, descripcionCategoria FROM tbl_Categoria";
+        String sql = "SELECT idCategoria, nombreCategoria, codigoCategoria, descripcionCategoria FROM tbl_categoria";
         return jdbcTemplate.query(sql, (rs, rowNum) -> {
             Categoria categoria = new Categoria();
             categoria.setIdCategoria(rs.getInt("idCategoria"));
