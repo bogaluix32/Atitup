@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ConsultarItem</title>
+    <link rel="stylesheet" href="/css/consultarItem.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Actor&family=Jura:wght@400;500&display=swap');
+      </style>
+</head>
+<body>
+    <main class="userWindow"> 
+ 
+        <div class="navbar">
+            <div calss="navbar-background"> </div>
+                <div class="btn-navbar">
+                    <button class="btn-analisisSentimientos" onclick="window.location.href='http://127.0.0.1:5500/html/analsisSentimientos.html'" >Análisis de sentimientos</button>
+                    <button class="btn-consultarItem" onclick="window.location.href='http://127.0.0.1:5500/html/consultarItem.html'" >Consultar Item</button>  
+                    <button class="btn-consultarTop" onclick="window.location.href='http://127.0.0.1:5500/html/ConsultarTOPX.html'"  >Consultar TOP X</button>  
+                    <button class="btn-generarPDF" onclick="window.location.href='http://127.0.0.1:5500/html/genrarPDF.html'" >Generar PDF</button>
+                    <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
+                </div>
+                
+        </div>
+        <div class="squareUser"></div>
+        <div class="containerImgUser">
+         <img src="https://images.pexels.com/photos/5474282/pexels-photo-5474282.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagen1" class="image1">
+         <h1>ATITUP</h1>
+        </div>          
+             <div class="contentUser"> 
+                 <h1>Realice una consulta</h1>
+                 <div class="square2User">
+                 <form class="RegisterContentUser">
+                     <div class="col1Item">
+                         <label id="lblCategoriaItem" for="cboCategoryItem" class="form-labelCol1Item">Categoría a la que pertenece el ítem</label>
+                         <select id="cboCategoryItem" class="form-selectCategoryItem">
+                             <option value="0">Seleccione una opción</option>
+                             <th:block th:each="c : ${listCategorias}">
+                                 <option th:value="${c.idCategoria}" th:text="${c.nombreCategoria}"></option>
+                             </th:block>
+                         </select>
+                     </div>
+
+                    <div class="col2User">
+                        <label id="lblPreguntaUser" for="cboPreguntaUser" class="form-labelCol1PreguntaUser">Preguntas:  </label>
+                        <select id="cboPreguntaUser" class="form-selectPreguntaUser">
+                            <option value="0">Seleccione una opción</option>
+                        </select>
+                    </div>
+
+                    <div class="Respuesta" >
+                        <label>Respuesta:</label>
+                        <input id="idRespuesta" name="respuesta">  
+                    </div>
+
+                    <div class="Ejemplo" >
+                        <label>Ejemplo:</label>
+                        <input id="idEjemplo" name="ejemplo">  
+                    </div>
+
+                    <div class="hacerConsulta">
+                        <button class="btn-hacerConsulta" onclick="if(validarSeleccionCategoria()) if(validarSeleccionPreguntas()) window.location.href='url_admin'" >Hacer consulta</button>  
+                     </div> 
+
+                    <div class="Comentario" >
+                        <label>Comentario <br> de la<br>  respuesta:</label>
+                        <input id="idComentario" name="comentario">  
+                    </div>
+
+                    <div class="col3User">
+                        <label id="lblCalificar" for="cboCalificar" class="form-labelCol3Calificar">Calificar<br> Respuesta</label>
+                        <select id="cboCalificar" class="form-selectCalificar">
+                            <option value="0">Seleccione una opción</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="ComentEjemplo" >
+                        <label>Comentario <br>del <br>ejemplo:</label>
+                        <input id="idComentEjemplo" name="comentEjemplo">  
+                    </div>
+                    <div class="col4User">
+                        <label id="lblCalificarEjemplo" for="cboCalificarEjemplo" class="form-labelCol3CalificarEjemplo">Calificar <br>Ejemplo</label>
+                        <select id="cboCalificarEjemplo" class="form-selectCalificarEjemplo">
+                            <option value="0">Seleccione una opción</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div> 
+
+                    <div class="RegistrarConsulta">
+                        <button class="btn-RegistrarConsulta" onclick="if(validarComentarioRespuestaVacio())if(validarSeleccionCalificarRespuesta()) if(validarComentarioEjemploVacio()) if(validarSeleccionCalificarEjemplo())window.location.href='url_admin'" >Registrar Consulta</button>  
+                     </div>
+                 </form>
+                </div>
+             </div>
+        </main>
+        <script src="scripts/consultarItem.js"></script>
+</body>
+</html>
