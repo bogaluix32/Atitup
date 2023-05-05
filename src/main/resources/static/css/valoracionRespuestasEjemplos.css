@@ -1,0 +1,300 @@
+body {
+    margin: 0;
+    padding: 0; 
+    background: rgba(47, 180, 255, 0.18);
+}
+.navbar {
+    position: relative;
+    width: 100%;
+    display: flex;
+    height: 60px;
+    align-items: center;
+    background-color: #323741;
+    padding: 0 24px; 
+}
+.btn-navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    margin-right:1%;
+    margin-left:20%;
+}
+.btn-exit {
+    margin-left: auto;
+}
+.btn-consultarItem{
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none; 
+    
+}
+.btn-consultarItem:hover{
+    color:grey;
+    border-bottom: 3px solid white ; 
+    }
+.btn-consultarTop{
+    margin:20px;
+    justify-content: center;
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;  
+    border-bottom: 3px solid white ; 
+}
+.btn-consultarTop:hover{
+    color:grey;
+    background-color: transparent;
+}
+
+.btn-generarPDF{
+    margin:0px;
+    justify-content: center;
+    background-color: transparent;
+    color:white;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;  
+}
+.btn-generarPDF:hover{
+    color:grey;
+    border-bottom: 3px solid white; 
+    background-color: transparent;
+}
+.btn-exit{
+    background-color: white;
+    color:black;
+    font-size: 18px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    margin-left: 25%;
+    padding: 8px 12px;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4); 
+}
+.btn-exit:hover,
+.btn-exit:active{
+    color:white;
+    background-color: transparent;
+    transition: all 1s ease;
+}
+.RegisterContentUser >*{
+    font-family: 'Actor', sans-serif;
+    margin: 10px;
+    display: flex;
+    flex-direction: row; 
+    justify-content: center;
+    text-align: center;
+    margin-left: 20px;
+    margin-top: 40px;
+   }
+
+.contentUser h1{
+    font-family: 'Actor', sans-serif;  
+    text-align: center;
+    margin-bottom: 1%;
+    /* margin-left: 30%; */
+    margin-top: 3%;
+    
+}
+.contentUser {
+   margin-top: 1%;
+}
+.squareUser {
+    position: absolute;
+    width: 600px;
+    height: 400px;
+    background: rgba(0, 159, 249, 0.94);
+    z-index: -1;
+  }
+  .square2User {
+    /* float: right; */
+    /* position: absolute; */
+    width: 600px;
+    height: 60%;
+    background:  rgb(185, 226, 250);
+    z-index: -1;
+    margin-right: 20%;
+    /* margin-top: 1%; */
+    margin: 5%;
+    border-radius: 20px;
+    overflow-y: scroll;
+
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+  }
+.image1{
+    padding: 5px;
+    float: left;
+    width: 670px;
+    height: 700px;
+    z-index: 1;
+    margin-left: 30px;
+    margin-top: 10px;
+    border-radius: 20px;
+    border: none;
+}
+
+.containerImgUser h1{
+    color:white;
+    font-size: 300%;
+    float: left;
+    position: absolute;
+    font-family: 'jura', sans-serif;  
+    margin-bottom: 50%;
+    margin-left: 15%;
+    margin-top: 15%;
+}
+.containerImgUser p{
+    color:white;
+    float: left;
+    position: absolute;
+    font-family: 'Actor', sans-serif;  
+    margin-bottom: 30%px;
+    margin-left: 9%;
+    margin-top: 20%;
+    text-align: center;
+    font-weight: 30%;
+    font-size: 120%;
+}
+.col1ConsultarTOPdeRespuestayEjemplo select {
+    width: 40%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 2%;
+}
+.col2ConsultarTOPRespuestayEjemplo select {
+    width: 40%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 2%;
+}
+.col3ConsultarRespuestayEjemplo select {
+    width: 40%;
+    height: 30px;
+    color:white;
+    border-radius: 20px;
+    border: none;
+    background-color: #323741;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    margin-left: 2%;
+}
+
+.btn-valoracionRespuestayEjemplos{
+    background-color: #323741;
+    color: white;
+    font-size: 15px;
+    font-weight: 100;
+    font-family:'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-radius: 20px;
+    transition: all 1s ease;
+    padding: 8px 12px;
+    margin-top: 2%;
+    align-items: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4), -2px -2px 4px rgba(255, 255, 255, 0.4);
+}
+.btn-valoracionRespuestayEjemplos:hover{
+    background-color: white;
+    color: black;
+}
+.valoracionRespuestayEjemployEjemplos{
+    /* margin-left: 40%; */
+    margin-bottom: 5%;
+}
+
+.col2ConsultarTOPCategoria{
+  margin-right: 4%;
+}
+
+.col3ConsultarFuente{
+    margin-right: 1%;
+}
+
+.TOPXRespuestayEjemplo input {
+    width: 10%;
+    text-align: center;
+    background-color: transparent;
+    color: black;
+    font-size: 16px;
+    font-weight: 1%;
+    font-family: 'Actor', sans-serif;
+    cursor: pointer;
+    border: none;
+    border-bottom: 1px solid black;
+  }
+
+  table {
+    background-color: rgba(172, 172, 172, 0.529);
+    /* vertical-align: top; */
+    position: absolute;
+    font-family: 'Actor', sans-serif;;
+    border-collapse: collapse;
+    width: 40%;
+    margin: 1% auto 1%;
+    margin-left: 55%;
+    margin-bottom: 300%;
+  
+    }
+    /* TABLA */
+    thead {
+      background-color: #333;
+      color: #fff;
+    }
+    th,
+    td {
+      text-align: center;
+      padding: 1%;
+    }
+    th {
+      text-transform: uppercase;
+    }
+    tbody tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+    tbody tr:hover {
+      background-color: #ddd;
+    }
+    .btn-analisisSentimientos{
+        margin:0px;
+        justify-content: center;
+        background-color: transparent;
+        color:white;
+        font-size: 18px;
+        font-weight: 100;
+        font-family:'Actor', sans-serif;
+        cursor: pointer;
+        border: none;  
+    }
+    .btn-analisisSentimientos:hover{
+        color:grey;
+        border-bottom: 3px solid white; 
+        background-color: transparent;
+    }
