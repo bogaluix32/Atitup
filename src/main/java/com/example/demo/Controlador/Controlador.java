@@ -1,15 +1,21 @@
 package com.example.demo.Controlador;
+import com.example.demo.DAO.ValoracionDAO;
 import com.example.demo.Entidades.Categoria;
 import com.example.demo.Entidades.Curso;
 import com.example.demo.Entidades.Item;
+import com.example.demo.Entidades.Valoraciones;
+import com.example.demo.InterfacesModelo.IItemModelo;
 import com.example.demo.Modelo.CategoriaModelo;
 import com.example.demo.Modelo.CursoModelo;
 import com.example.demo.Modelo.ItemModelo;
+import com.example.demo.Modelo.ValoracionesModelo;
+import com.example.demo.Terceros.AnalisisSentimientos;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,6 +31,9 @@ public class Controlador {
 
     @Autowired
     private ItemModelo itemModelo;
+
+    @Autowired
+    private ValoracionesModelo valoracionesModelo;
     ArrayList<String> cursosSeleccionados = new ArrayList<String>();
 
 
@@ -42,9 +51,26 @@ public class Controlador {
         return "RegistrarItem";
     }
 
-    @GetMapping("/Regresar")
-    public String MostrarVistaPrincipal() {
-        return "index";
+    @GetMapping("/ConsultarItem")
+    public String MostrarVistaConsultarItem(Model model) {
+        //model.addAttribute("item", new Item());
+        List<Categoria> listCategorias = categoriaModelo.listarCategoria();
+        model.addAttribute("listCategorias", listCategorias);
+        return "consultarItem";
+    }
+    @GetMapping("/analisisSentimientos")
+    public String MostrarVistaAnalisisSentimientos(Model model) {
+        List<Categoria> listCategorias = categoriaModelo.listarCategoria();
+        model.addAttribute("listCategorias", listCategorias);
+        return "analsisSentimientos";
+    }
+    @GetMapping("/consultarTop")
+    public String MostrarVistaConsultarTop() {
+        return "ConsultarTOPX";
+    }
+    @GetMapping("/generarPDF")
+    public String MostrarVistaGenerarPDF() {
+        return "genrarPDF";
     }
 
     @PostMapping("/GuardarRegistroCategoria")
@@ -71,7 +97,25 @@ public class Controlador {
         return "index";
     }
 
-    //---Auxiliares---
+    @GetMapping("/obtenerPreguntas/{idCategoria}")
+    public List<Item> obtenerPreguntas(@RequestParam("idCategoria") int idCategoria) {
+        List<Item> preguntas = itemModelo.listarItems(idCategoria);
+        return preguntas;
+    }
+
+    @GetMapping("/analizarSentimientos")
+    public ModelAndView realizaAnalisisSentimientos(){
+        //List<Valoraciones> valoraciones = valoracionesModelo.listarValoraciones();
+        //Valoraciones val = valoraciones.get(0);
+        //String comentario = AnalisisSentimientos.realizarAnalisisSentimientos(val.getComentario());
+        String comentario = "La respuesta y el ejemplo son acordes al tema, ayudan mucho para aprender, estoy muy contento";
+        //String respuesta = AnalisisSentimientos.realizarAnalisisSentimientos(comentario);
+        ModelAndView mav = new ModelAndView("mostrarSentimiento");
+        mav.addObject("respuesta", comentario);
+        return mav;
+    }
+
+        //---Auxiliares---
     private void guardarCursos(String[] checkboxCursos ){
         if(checkboxCursos!=null) {
             for(String curso : checkboxCursos) {

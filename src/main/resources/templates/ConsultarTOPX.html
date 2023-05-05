@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thyleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consultar TOP X</title>
+    <link rel="stylesheet" href="/css/consultarTOPX.css">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Actor&family=Jura:wght@400;500&display=swap');
+      </style>
+
+</head>
+<body>
+    <main class="userWindow"> 
+ 
+        <div class="navbar">
+            <div calss="navbar-background"> </div>
+                <div class="btn-navbar">
+                    <a th:href="@{/index/analisisSentimientos}" class="btn-analisisSentimientos">Análisis de sentimientos</a>
+                    <a th:href="@{/index/ConsultarItem}" class="btn-consultarItem">Consultar Item</a>
+                    <a th:href="@{/index/consultarTop}" class="btn-consultarTop">Consultar TOP X</a>
+                    <a th:href="@{/index/generarPDF}" class="btn-generarPDF">Generar PDF</a>
+                    <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
+                </div>
+                
+        </div>
+        
+        
+        <div class="squareUser"></div>
+        <div class="containerImgUser">
+         <img src="https://images.pexels.com/photos/5083397/pexels-photo-5083397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagen1" class="image1">
+         <h1>ESTADISTICAS</h1> 
+         
+
+        </div>          
+             <div class="contentUser"> 
+                 <h1>TOP X</h1>   
+
+                 <div class="square2User">
+                 <section class="RegisterContentUser"> 
+
+                    <label id="lblConsultarTOP" class="ConsultarTOP"> Seleccione una valoración del TOP X que desea visualizar</label>
+                    <label id="lblConsultarTOP2" class="ConsultarTOP"> Valoración de:</label>
+
+                   <div class="btnsValoracion">
+                        <div class="valoracionRespuestas">
+                            <button class="btn-valoracionRespuestas" onclick="window.location.href='http://127.0.0.1:5500/html/valoracionRespuestas.html'" >Respuestas</button>  
+                        </div>
+
+                        <div class="valoracionEjemplos">
+                            <button class="btn-valoracionEjemplos" onclick="window.location.href='http://127.0.0.1:5500/html/valoracionEjemplos.html'" >Ejemplos</button>  
+                        </div>
+
+                        <div class="valoracionRespuestasEjemplos">
+                            <button class="btn-valoracionRespuestasEjemplos" onclick="window.location.href='http://127.0.0.1:5500/html/valoracionRespuestasEjemplos.html'" >Respuestas y ejemplos</button>  
+                        </div>
+                    </div>
+                 </section>
+                </div>
+
+                
+             </div>
+            
+            
+        </main>
+</body>
+</html>

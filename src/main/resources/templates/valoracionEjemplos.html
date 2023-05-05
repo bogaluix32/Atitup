@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valoracion de Ejemplos</title>
+    <link rel="stylesheet" href="../css/valoracionEjemplos.css"> 
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Actor&family=Jura:wght@400;500&display=swap');
+      </style>
+
+</head>
+<body>
+    <main class="userWindow"> 
+ 
+        <div class="navbar">
+            <div calss="navbar-background"> </div>
+                <div class="btn-navbar">
+                  <button class="btn-analisisSentimientos" onclick="window.location.href='http://127.0.0.1:5500/html/analsisSentimientos.html'" >Análisis de sentimientos</button>
+                    <button class="btn-consultarItem" onclick="window.location.href='http://127.0.0.1:5500/html/consultarItem.html'" >Consultar Item</button>  
+                    <button class="btn-consultarTop" onclick="window.location.href='http://127.0.0.1:5500/html/ConsultarTOPX.html'"  >Consultar TOP X</button>  
+                    <button class="btn-generarPDF" onclick="window.location.href='http://127.0.0.1:5500/html/genrarPDF.html'" >Generar PDF</button> 
+                    <button class="btn-exit" onclick="window.location.href='http://127.0.0.1:5500/html/Inicio.html'" >Salir</button>
+                </div>
+                
+        </div>
+        
+        
+        <div class="squareUser"></div>
+        <div class="containerImgUser">
+         
+        </div>          
+             <div class="contentUser"> 
+                <table class="table2">
+                    <!-- PRIMERA LINEA DE LA TABLA -->
+                            <thead>
+                              <tr>
+                                <th>TOP</th>
+                                <th>Valoración</th>
+                                <th>Pregunta</th>
+                              </tr>
+                            </thead>
+                    <!-- CUERPO DE LA TABLA -->
+                            <tbody>
+                              <tr>
+                                <td>1</td>
+                                <td>7</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>
+                              </tr>
+                    
+                              <tr>
+                                <td>2</td>
+                                <td>8</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>
+                              </tr>
+                    
+                              <tr>
+                                <td>3</td>
+                                <td>11</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>
+                              </tr>
+
+                              <tr>
+                                <td>4</td>
+                                <td>8</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>
+                              </tr>
+                    
+                              <tr>
+                                <td>5</td>
+                                <td>11</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>  
+                              </tr>
+
+                              <tr>
+                                <td>6</td>
+                                <td>8</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>
+                              </tr>
+                    
+                              <tr>
+                                <td>7</td>
+                                <td>11</td>
+                                <td>Lorem ipsum dolor efenma? Natus, voluptatem.</td>
+                              </tr>
+
+                            </tbody>
+                    
+                 </table>
+
+
+                 <div class="square2User">
+                    <h1>Valoración de los ejemplos</h1>  
+                 <section class="RegisterContentUser"> 
+
+                    <div class="TOPXejemplo" >
+                        <label>Top:</label>
+                        <input id="idTopXejemplo" name="TopXejemplo" placeholder="número" >
+                        <label> de valoraciones de los ejemplos</label>
+                    </div>
+                
+                    <div class="col1ConsultarTOPdeEjemplo">
+                        <label id="lblConsultarTOPdeEjemplo" for="cboConsultarTOPdeEjemplo" class="form-labelCol1ConsultarTOPdeEjemplo">Top X de:  </label>
+                        <select id="cboConsultarTOPdeEjemplo" class="form-selectConsultarTOPdeEjemplo">
+                            <option value="0">Seleccione una opción</option>
+                            <option value="1">Todos los items</option>
+                            <option value="2">categoría específica </option>
+                        </select>
+                    </div>
+                    <div class="col2ConsultarTOPEjemplo">
+                        <label id="lblcol2ConsultarTOPEjemplo" for="cbocol2ConsultarTOPEjemplo" class="form-labelcol2ConsultarTOPEjemplo">Categoría:  </label>
+                        <select id="cbocol2ConsultarTOPEjemplo" class="form-selectcol2ConsultarTOPEjemplo">
+                            <option value="0">Seleccione una Categoría</option>
+                            <option value="1">categoria</option>
+                            
+                        </select>
+                    </div>
+
+                    <div class="col3ConsultarFuenteEjemplo">
+                        <label id="lblConsultarTOPFuenteEjemplo" for="cboConsultarTOPFuenteEjemplo" class="form-labelCol2ConsultarTOPFuenteEjemplo">Fuente:   </label>
+                        <select id="cboConsultarTOPFuenteEjemplo" class="form-selectConsultarTOPFuenteEjemplo">
+                            <option value="0">Seleccione una Categoría</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">ChatGPT</option>
+                        </select>
+                    </div>
+
+                   <div class="btnsValoracion">
+                        <div class="valoracionRespuestas">
+                            <button class="btn-valoracionRespuestas" onclick="if(validarNumeroVacio())if(validarNumero()) if(validarSeleccionTopX())if(validarSeleccionCategoria())if(validarSeleccionFuente())window.location.href='url_admi'" >Generar estadística</button>  
+                        </div> 
+                    </div>
+
+                    
+                </section>
+                 </div> 
+                       
+             </div>    
+        </main>
+        <script src="../js/valoracionEjemplos.js"></script>
+</body>
+</html>

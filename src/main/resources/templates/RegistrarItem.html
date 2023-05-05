@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/css/RegistrarItemStyle.css">
     <script src="/scripts/RegistrarItem.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 
 <main class="adminWindowItem">
@@ -22,7 +23,9 @@
             <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
         </div>
     </div>
+    <div id="google_translate_element">
 
+    </div>
     <div class="square"></div>
     <div class="containerImg">
         <img src="https://images.pexels.com/photos/8572602/pexels-photo-8572602.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Imagen1" class="image1">
@@ -94,21 +97,10 @@
 </html>
 
 <script>
-    /*
-    $('#myForm').on('submit', function(event) {
-        event.preventDefault(); // evita que el formulario se envíe automáticamente
-
-        var formData = $(this).serialize(); // serializa los datos del formulario
-
-        $.post('/index/GuardarRegistroItem', formData, function(data) {
-            // actualiza el input correspondiente con la respuesta recibida
-            if (data.respuestaChatGPT) {
-                $('#respuesta').val(data.respuestaChatGPT);
-            }
-            if (data.ejemploChatGPT) {
-                $('#ejemplo').val(data.ejemploChatGPT);
-            }
-        });
-    });*/
+    function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+            {pageLanguage: 'es'},
+            'google_translate_element'
+        )};
 
 </script>

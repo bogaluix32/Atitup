@@ -10,6 +10,7 @@
   </style>
     <link rel="stylesheet" href="/css/RegistrarCategoriaStyle.css">
     <script src="/scripts/RegistrarCategoria.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </head>
 <body>
 <main class="adminWindow">
@@ -21,6 +22,8 @@
       <a th:href="@{/index/RegistrarItem}" class="btn-registerItem">Registrar Item</a>
       <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
     </div>
+
+      <div id="google_translate_element"></div>
 
   </div>
   <div class="contentAdmin">
@@ -133,4 +136,9 @@
         opcion.text = curso.name
         codigoCursosSelect.add(opcion)
     })
+    function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+            {pageLanguage: 'es'},
+            'google_translate_element'
+        )};
 </script>

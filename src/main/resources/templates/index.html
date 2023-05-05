@@ -9,10 +9,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link type="text/css" rel="stylesheet" href="/css/Style.css">
     <script src="/scripts/inicio.js"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <title>ATITUP</title>
 </head>
 <body>
 <section class="home">
+    <div id="google_translate_element"></div>
     <div class="cover">
         <div class="content">
             <h1>ATITUP</h1>
@@ -20,11 +22,21 @@
             <div>
                  <button class="btn-primary"> <a id="miBoton"  class="btn-primary"
                    th:href="@{/index/RegistrarCategoria}">ADMIN</a></button>
-                <button class="btn-secondary">USER</button>
+                <button class="btn-secondary"> <a id="miBoton2"  class="btn-secondary"
+                                                th:href="@{/index/ConsultarItem}">USUARIO</a></button>
             </div>
+            <label for="email">Ingrese su correo elctrónico:</label>
+            <input type="email" id="email" name="email"><br><br>
         </div>
     </div>
 </section>
 <script src="/scripts/pantallaInicio.js"></script>
 </body>
 </html>
+<script>
+    function googleTranslateElementInit(){
+        new google.translate.TranslateElement(
+            {pageLanguage: 'es'},
+            'google_translate_element'
+        )};
+</script>

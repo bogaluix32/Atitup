@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ConsultarItem</title>
     <link rel="stylesheet" href="/css/consultarItem.css">
+    <script src="/webjars/jquery/3.6.0/jquery.min.js"></script>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Actor&family=Jura:wght@400;500&display=swap');
       </style>
+    <script src="scripts/consultarItem.js"></script>
 </head>
 <body>
     <main class="userWindow"> 
@@ -16,10 +18,10 @@
         <div class="navbar">
             <div calss="navbar-background"> </div>
                 <div class="btn-navbar">
-                    <button class="btn-analisisSentimientos" onclick="window.location.href='http://127.0.0.1:5500/html/analsisSentimientos.html'" >Análisis de sentimientos</button>
-                    <button class="btn-consultarItem" onclick="window.location.href='http://127.0.0.1:5500/html/consultarItem.html'" >Consultar Item</button>  
-                    <button class="btn-consultarTop" onclick="window.location.href='http://127.0.0.1:5500/html/ConsultarTOPX.html'"  >Consultar TOP X</button>  
-                    <button class="btn-generarPDF" onclick="window.location.href='http://127.0.0.1:5500/html/genrarPDF.html'" >Generar PDF</button>
+                    <a th:href="@{/index/analisisSentimientos}" class="btn-analisisSentimientos">Análisis de sentimientos</a>
+                    <a th:href="@{/index/ConsultarItem}" class="btn-consultarItem">Consultar Item</a>
+                    <a th:href="@{/index/consultarTop}" class="btn-consultarTop">Consultar TOP X</a>
+                    <a th:href="@{/index/generarPDF}" class="btn-generarPDF">Generar PDF</a>
                     <a th:href="@{/index/Regresar}" class="btn-exit">Salir</a>
                 </div>
                 
